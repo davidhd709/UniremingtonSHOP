@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto - Uniremington Shop</title>
+    <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="/public/img/LOGO_UNIREMINGTONSHOP.png" alt="Logo de Uniremington Shop" id="shopLogo">
+            </div>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="add-product.html">Agregar Producto</a>
+                <a href="edit-product.html" class="active">Editar Producto</a>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Editar Producto</h1>
+            <form id="editProductForm">
+                <input type="hidden" id="productId">
+                <input type="text" id="productName" placeholder="Nombre del producto" required>
+                <input type="number" id="productPrice" placeholder="Precio" required>
+                <input type="text" id="productImage" placeholder="URL de la imagen" required>
+                <textarea id="productDescription" placeholder="Descripción" required></textarea>
+                <button type="submit">Actualizar Producto</button>
+            </form>
+            
+            <a href="index.html">
+                <button>
+                    <i class="fas fa-arrow-left"></i> Volver al inicio
+                </button>
+            </a>
+            
+                
+        
+        </main>
+    </div>
+
+    <script src="/public/js/edit-product.js"></script>
+</body>
+</html>

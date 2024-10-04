@@ -11,26 +11,37 @@
     <div class="container">
         <header>
             <div class="logo">
-                <img src="LOGO_UNIREMINGTONSHOP.png" alt="Logo de Uniremington Shop" id="shopLogo">
+                <img src="/public/img/LOGO_UNIREMINGTONSHOP.png" alt="Logo de Uniremington Shop" id="shopLogo">
             </div>
             <div class="search-bar">
-                <input type="text" placeholder="Agregar productos..." id="searchInput">
-                <button><i class="fas fa-plus"></i> Agregar</button>
+                <a href="add-product.html" class="add-product-btn">
+                    <button><i class="fas fa-plus"></i> Agregar</button>
+                </a>
                 <div class="cart-icon">
                     <button><i class="fas fa-shopping-cart"></i> Mi carrito</button>
                 </div>
             </div>
         </header>
+        
+        <h2 class="promotion-title">OFERTAS</h2>
+        <div id="promotionList" class="product-list promotion-background">
+            <!-- Aquí se insertarán los productos de promociones -->
+        </div>
 
         <form id="productForm">
-            <!-- Elementos del formulario aquí -->
+            <select id="categorySelect">
+                <option value="">Selecciona una categoría</option>
+                <!-- Las categorías se llenarán dinámicamente aquí -->
+            </select>
+            <button id="filterButton">Filtrar</button>
         </form>
-
+        
         <div id="productList" class="product-list">
             <!-- Aquí se insertarán los productos dinámicamente -->
         </div>
+
     </div>
 
-    <script src="app.js"></script>
+    <script src="/public/js/app.js"></script>
 </body>
 </html>

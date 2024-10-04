@@ -17,6 +17,21 @@ header {
     padding: 20px 0;
 }
 
+.logo img {
+    height: 120px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción del logo */
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+}
+
+nav a.active {
+    font-weight: bold;
+}
+
 .search-bar {
     display: flex;
     justify-content: center;
@@ -25,14 +40,14 @@ header {
 }
 
 .search-bar input {
-    width: 50%;
-    padding: 10px;
+    width: 40%; /* Ajusta el ancho del input */
+    padding: 8px; /* Ajusta el padding */
     border-radius: 5px;
     border: 1px solid #ddd;
 }
 
 .search-bar button {
-    padding: 10px;
+    padding: 8px; /* Ajusta el padding */
     background-color: #0f79ad;
     border: none;
     border-radius: 5px;
@@ -55,50 +70,43 @@ header {
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 10px;
-    padding: 15px;
-    width: 30%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    padding: 10px; /* Ajusta el padding */
+    width: 22%; /* Reduce el ancho del card */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px; /* Ajusta el margen inferior */
     text-align: center;
 }
 
 .product-card img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 8px; /* Ajusta el borde */
 }
 
 .product-card h3 {
-    font-size: 1.2em;
-    margin: 10px 0;
+    font-size: 1.1em; /* Ajusta el tamaño de fuente */
+    margin: 8px 0; /* Ajusta el margen */
 }
 
 .product-card p {
     color: #888;
-    font-size: 0.9em;
+    font-size: 0.8em; /* Ajusta el tamaño de fuente */
 }
 
 .product-card .price {
-    font-size: 1.4em;
+    font-size: 1.2em; /* Ajusta el tamaño de fuente */
     font-weight: bold;
-    margin: 10px 0;
+    margin: 8px 0; /* Ajusta el margen */
     color: #009900;
 }
 
 .product-card button {
-    padding: 10px;
-    margin: 5px;
+    padding: 8px; /* Ajusta el padding */
+    margin: 4px; /* Ajusta el margen */
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
-
-
-#shopLogo {
-    height: 150px; /* Aumenta la altura del logo */
-    width: auto; /* Mantiene la proporción del logo */
-}
-
 
 button.edit {
     background-color: #ff9800;
@@ -113,4 +121,87 @@ button.delete {
 button.buy {
     background-color: #4caf50;
     color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea {
+    margin-bottom: 10px;
+    padding: 8px; /* Ajusta el padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form select {
+    flex: 1; /* Toma el espacio restante */
+    padding: 8px; /* Ajusta el padding */
+    border: 1px solid #ccc; /* Añade un borde */
+    border-radius: 4px; /* Bordes redondeados */
+    margin-right: 10px; /* Espacio entre select y botón */
+}
+
+form button {
+    padding: 8px 16px;
+    background-color: #0f79ad; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #093e58;
+}
+
+.promotions {
+    margin-top: 40px; /* Margen superior */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1)
+}
+
+.promotions h2 {
+    text-align: center; 
+    margin-bottom: 20px; 
+    font-size: 2em; 
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.promotion-title {
+    color: #003366; 
+    text-align: center; 
+    margin-top: 20px; 
+    font-size: 3em; 
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.promotion-background {
+    background-color: #5fa7ff; 
+    border-radius: 10px; 
+    margin-top: 20px; 
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #0f79ad; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #093e58;
 }
