@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #333333; /* Fondo oscuro */
+    color: rgb(0, 0, 0); /* Texto en blanco */
     margin: 0;
     padding: 0;
 }
@@ -9,9 +10,12 @@ body {
     width: 80%;
     margin: 0 auto;
 }
-
+h1{
+    text-align: center;
+    color: #ffffff;
+}
 header {
-    background-color: #5fa7ff;
+    background-color: #5fa7ff; /* Mantener el color azul para el header */
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -22,16 +26,6 @@ header {
     width: auto; /* Mantiene la proporción del logo */
 }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: white;
-}
-
-nav a.active {
-    font-weight: bold;
-}
-
 .search-bar {
     display: flex;
     justify-content: center;
@@ -39,20 +33,20 @@ nav a.active {
     margin-top: 10px;
 }
 
-.search-bar input {
-    width: 40%; /* Ajusta el ancho del input */
-    padding: 8px; /* Ajusta el padding */
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
 .search-bar button {
     padding: 8px; /* Ajusta el padding */
-    background-color: #0f79ad;
-    border: none;
+    background-color: #5fa7ff; /* Color dorado */
+    border: 1px  solid #000000; /* Borde dorado */
     border-radius: 5px;
     margin-left: 10px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #112844; /* Color dorado más oscuro en hover */
+    color: rgb(255, 255, 255); /* Texto en blanco */
+
 }
 
 .cart-icon {
@@ -67,14 +61,20 @@ nav a.active {
 }
 
 .product-card {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: rgb(253, 253, 253); /* Fondo blanco para los productos */
+    border: 2px solid #00a2ff; /* Borde dorado */
     border-radius: 10px;
     padding: 10px; /* Ajusta el padding */
     width: 22%; /* Reduce el ancho del card */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     margin-bottom: 15px; /* Ajusta el margen inferior */
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición para hover */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada */
 }
 
 .product-card img {
@@ -83,52 +83,53 @@ nav a.active {
     border-radius: 8px; /* Ajusta el borde */
 }
 
-.product-card h3 {
-    font-size: 1.1em; /* Ajusta el tamaño de fuente */
+.product-card h3, .product-card p {
     margin: 8px 0; /* Ajusta el margen */
-}
-
-.product-card p {
-    color: #888;
-    font-size: 0.8em; /* Ajusta el tamaño de fuente */
 }
 
 .product-card .price {
     font-size: 1.2em; /* Ajusta el tamaño de fuente */
     font-weight: bold;
     margin: 8px 0; /* Ajusta el margen */
-    color: #009900;
+    color: #ffb300; /* Texto dorado para el precio */
 }
 
-.product-card button {
-    padding: 8px; /* Ajusta el padding */
-    margin: 4px; /* Ajusta el margen */
-    border: none;
-    border-radius: 5px;
+button {
+    padding: 10px 15px; /* Ajusta el padding */
+    border: none; 
+    border-radius: 5px; 
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
 }
 
 button.edit {
-    background-color: #ff9800;
+    background-color: #ff9800; /* Naranja */
     color: white;
+}
+
+button.edit:hover {
+    background-color: #e68a00; /* Naranja más oscuro */
+    transform: scale(1.05); /* Efecto de hover */
 }
 
 button.delete {
-    background-color: #f44336;
+    background-color: #f44336; /* Rojo */
     color: white;
+}
+
+button.delete:hover {
+    background-color: #d32f2f; /* Rojo más oscuro */
+    transform: scale(1.05); /* Efecto de hover */
 }
 
 button.buy {
-    background-color: #4caf50;
+    background-color: #4caf50; /* Verde */
     color: white;
 }
 
-main {
-    padding: 20px;
-}
-
-h1 {
-    margin-bottom: 20px;
+button.buy:hover {
+    background-color: #43a047; /* Verde más oscuro */
+    transform: scale(1.05); /* Efecto de hover */
 }
 
 form {
@@ -136,72 +137,86 @@ form {
     flex-direction: column;
 }
 
-form input,
-form textarea {
-    margin-bottom: 10px;
-    padding: 8px; /* Ajusta el padding */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
 form select {
     flex: 1; /* Toma el espacio restante */
     padding: 8px; /* Ajusta el padding */
     border: 1px solid #ccc; /* Añade un borde */
     border-radius: 4px; /* Bordes redondeados */
     margin-right: 10px; /* Espacio entre select y botón */
+    background-color: #1f1f1f; /* Fondo oscuro para el select */
+    color: white; /* Texto blanco para el select */
 }
 
 form button {
     padding: 8px 16px;
-    background-color: #0f79ad; 
-    color: white; 
+    background-color: #5fa7ff; 
+    color: black; /* Texto negro para mejor contraste */
     border: none; 
     border-radius: 4px; 
     cursor: pointer;
 }
 
 form button:hover {
-    background-color: #093e58;
-}
-
-.promotions {
-    margin-top: 40px; /* Margen superior */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1)
-}
-
-.promotions h2 {
-    text-align: center; 
-    margin-bottom: 20px; 
-    font-size: 2em; 
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    background-color: #112844; /* Color dorado más oscuro en hover */
 }
 
 .promotion-title {
-    color: #003366; 
+    color: #5fa7ff; 
     text-align: center; 
     margin-top: 20px; 
     font-size: 3em; 
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+/* Espaciado entre inputs */
+form input,
+form textarea {
+    margin-bottom: 15px; /* Espacio entre cada input */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
+/* Estilo de los botones en contenedor */
+.button-container {
+    margin-top: 20px; /* Espacio entre el formulario y los botones */
+    display: flex; /* Para alinear los botones en una fila */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px; /* Espacio entre el formulario y los botones */
+    gap: 10px; /* Espacio entre los botones */
+    
+}
 
-
-.promotion-background {
-    background-color: #5fa7ff; 
-    border-radius: 10px; 
-    margin-top: 20px; 
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+.back-to-list-btn {
+    display: inline-block; /* Para permitir que se alineen en la misma línea */
+    margin-right: 10px; /* Espacio entre los botones */
 }
 
 button {
-    padding: 8px 16px;
-    background-color: #0f79ad; 
+    padding: 8px 10px; /* Ajustar el padding para hacerlos más angostos */
+    background-color: #0f79ad; /* Color de fondo para los botones */
     color: white; 
     border: none; 
     border-radius: 4px; 
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #093e58;
+    background-color: #093e58; /* Color en hover */
+}
+
+.btn-back {
+    padding: 10px 15px; /* Aumentar el padding para hacer el botón más grande */
+    font-size: 1em; /* Aumentar el tamaño de la fuente */
+    background-color: #0f79ad; /* Color de fondo para los botones */
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Agregar transición para efecto */
+}
+
+.btn-back:hover {
+    background-color: #093e58; /* Color en hover */
+    transform: scale(1.05); /* Aumentar ligeramente el tamaño del botón */
 }

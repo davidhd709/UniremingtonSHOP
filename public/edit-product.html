@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Producto - Uniremington Shop</title>
     <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -12,11 +13,7 @@
             <div class="logo">
                 <img src="/public/img/LOGO_UNIREMINGTONSHOP.png" alt="Logo de Uniremington Shop" id="shopLogo">
             </div>
-            <nav>
-                <a href="index.html">Inicio</a>
-                <a href="add-product.html">Agregar Producto</a>
-                <a href="edit-product.html" class="active">Editar Producto</a>
-            </nav>
+          
         </header>
 
         <main>
@@ -27,17 +24,14 @@
                 <input type="number" id="productPrice" placeholder="Precio" required>
                 <input type="text" id="productImage" placeholder="URL de la imagen" required>
                 <textarea id="productDescription" placeholder="Descripción" required></textarea>
-                <button type="submit">Actualizar Producto</button>
-            </form>
-            
-            <a href="index.html">
-                <button>
-                    <i class="fas fa-arrow-left"></i> Volver al inicio
-                </button>
-            </a>
-            
                 
-        
+            </form>
+            <div class="button-container">
+                <button class="btn-back" type="submit">Actualizar Producto</button>
+                <a href="index.html" class="back-to-list-btn">
+                    <button class="btn-back"><i class="fas fa-arrow-left"></i> Volver al inicio</button>
+                </a>
+            </div>
         </main>
     </div>
 

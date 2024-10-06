@@ -1,26 +1,34 @@
+// Definimos la URL de la API para los productos
 const API_URL = 'http://localhost:3000/api/products';
+
+// Obtenemos referencias a elementos del DOM
 const productList = document.getElementById('productList');
 const productForm = document.getElementById('productForm');
 const filterButton = document.getElementById('filterButton');
 const categorySelect = document.getElementById('categorySelect');
 const promotionList = document.getElementById('promotionList');
 
-let allProducts = []; // Variable para almacenar todos los productos
-let categories = []; // Variable para almacenar todas las categorías
+// Variables para almacenar todos los productos y categorías
+let allProducts = [];
+let categories = [];
 
+// Función asíncrona para cargar los productos
 async function loadProducts() {
     try {
+        // Realizamos una solicitud GET a la API para obtener los productos
         const response = await fetch(API_URL);
-        allProducts = await response.json(); // Guardamos todos los productos
-        displayProducts(allProducts); // Mostramos todos los productos al cargar
-        loadCategories(); // Cargamos las categorías
-        displayPromotions(); // Muestra productos aleatorios en promociones
-        setInterval(displayPromotions, 5000); // Cambia las promociones cada 3 segundos
+        allProducts = await response.json();
+        displayProducts(allProducts);
+        loadCategories();
+        displayPromotions();
+        // Actualizamos las promociones cada 5 segundos
+        setInterval(displayPromotions, 5000);
     } catch (error) {
         console.error('Error al cargar productos:', error);
     }
 }
 
+// Función asíncrona para cargar las categorías
 async function loadCategories() {
     try {
         const response = await fetch('http://localhost:3000/api/categories');
@@ -31,22 +39,25 @@ async function loadCategories() {
     }
 }
 
+// Función para llenar el select de categorías
 function fillCategorySelect(categories) {
     categories.forEach(category => {
         const option = document.createElement('option');
-        option.value = category.id; 
+        option.value = category.id;
         option.textContent = category.name;
         categorySelect.appendChild(option);
     });
 }
 
+// Event listener para el botón de filtrado
 filterButton.addEventListener('click', () => {
     const filterValue = filterInput.value.trim().toLowerCase();
     const selectedCategory = categorySelect.value;
 
+    // Filtramos los productos basándonos en el nombre y la categoría
     const filteredProducts = allProducts.filter(product => {
         const matchesName = product.name.toLowerCase().includes(filterValue);
-        const matchesCategory = selectedCategory ? product.categoryId === selectedCategory : true; // Filtrar por categoría
+        const matchesCategory = selectedCategory ? product.categoryId === selectedCategory : true;
 
         return matchesName && matchesCategory;
     });
@@ -54,6 +65,7 @@ filterButton.addEventListener('click', () => {
     displayProducts(filteredProducts);
 });
 
+// Función para mostrar los productos en la página
 function displayProducts(products) {
     productList.innerHTML = '';
     products.forEach(product => {
@@ -72,10 +84,12 @@ function displayProducts(products) {
     });
 }
 
+// Función para editar un producto
 async function editProduct(id) {
     window.location.href = `edit-product.html?id=${id}`;
 }
 
+// Función para eliminar un producto
 async function deleteProduct(id) {
     if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
         try {
@@ -94,14 +108,16 @@ async function deleteProduct(id) {
     }
 }
 
+// Función para obtener productos aleatorios
 function getRandomProducts(num) {
     const shuffled = allProducts.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, num);
 }
 
+// Función para mostrar productos en promoción
 function displayPromotions() {
     promotionList.innerHTML = '';
-    const randomProducts = getRandomProducts(4); // Cambia el número según lo que desees mostrar
+    const randomProducts = getRandomProducts(4);
 
     randomProducts.forEach(product => {
         const productCard = document.createElement('div');
@@ -116,5 +132,5 @@ function displayPromotions() {
     });
 }
 
-// Llama a la función al cargar la página
+// Cargamos los productos cuando se carga la página
 document.addEventListener('DOMContentLoaded', loadProducts);
